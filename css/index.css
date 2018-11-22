@@ -12,6 +12,13 @@ ul {
 .red {
   color: red;
 }
+.mt_20 {
+  margin-top: 20px;
+}
+.table {
+  text-align: center;
+  vertical-align: middle;
+}
 .sidebar {
   width: 180px;
   height: 100%;

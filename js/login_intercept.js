@@ -7,7 +7,7 @@ $(function () {
       success: function (info) {
          console.log(info);
          if (info.success) {
-            close.log('用户已经登陆');
+            console.log('用户已经登陆');
          }
 
          if (info.error === 400) {

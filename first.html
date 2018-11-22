@@ -6,6 +6,7 @@
   <title>乐淘电商</title>
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
   <link rel="stylesheet" href="lib/nprogress/nprogress.css">
   <link rel="stylesheet" href="css/index.css">
 </head>
@@ -45,22 +46,40 @@
       <a href="javascript:;" class="pull-right icon_logout "><i class="glyphicon glyphicon-log-out"></i></a>
     </div>
 
-    <!-- 提示区的连接导航条 -->
     <div class="container-fluid">
-      <ol class="breadcrumb">
+
+      <!-- 链接导航, 路径导航 -->
+      <ol class="breadcrumb mt_20">
         <li><a href="index.html">管理系统</a></li>
-        <li>分类管理</li>  
-        <li>一级分类</li>
+        <li class="active">分类管理</li>
+        <li class="active">一级分类</li>
       </ol>
 
-      <div class="main_content">
-        <div class="echarts_1 pull-left"></div>
-        <div class="echarts_2 pull-right"></div>
+      <div class="lt_content">
+
+        <button class="btn btn-default" id="addBtn">添加分类</button>
+
+        <table class="table table-bordered table-hover mt_20">
+          <thead>
+            <tr>
+              <th style="text-align: center" width="50%">序号</th>
+              <th style="text-align: center" width="50%">一级分类名</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 挖个坑 -->
+          </tbody>
+        </table>
+
+        <div class="text-right">
+          <!-- 准备分页容器 -->
+          <ul id="paginator"></ul>
+        </div>
+
       </div>
 
+
     </div>
-
-
 
   </div>
 
@@ -110,24 +129,27 @@
   </div>
 
 
-  <script type="text/html" id="userTpl">
+  <script type="text/html" id="firstTpl">
     {{ each rows v i }}
     <tr>
-      <!-- 前面有多少页*一页多少条 + (i+1) -->
-      <td>{{ (page-1)*size + i+1 }}</td>
+      <td>{{ i + 1 + (page-1)*size }}</td>
       <td>{{ v.categoryName }}</td>
     </tr>
-  {{ /each }}
-</script>
+    {{ /each }}
+  </script>
 
 
 
 
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+  <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
   <script src="lib/nprogress/nprogress.js"></script>
   <script src="js/common.js"></script>
   <script src="./js/login_intercept.js"></script>
+  <script src="./js/first.js"></script>
 
 </body>
 
