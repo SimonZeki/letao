@@ -12,8 +12,28 @@ $(function () {
    })
 
 
-   //点击退出按钮显示模态框
+   //公共的退出功能
+
+   //1- 点击右侧退出小图标显示模态框
    $('.icon_logout').click(function(){
       $('#logoutModal').modal("show");
+   });
+
+   //2- 点击退出就会隐藏模态框 并且 退出到登陆界面
+   $('#logoutBtn').click(function(){
+      //发送ajax 请求给后台，让后台删除用户的登陆状态
+      $.ajax({
+         type: 'get',
+         url: '/employee/employeeLogout',
+         dataType: 'json',
+         success: function(info){
+            console.log(info);
+
+            location.href = 'login.html';
+            
+         }
+      })
    })
+
+
 })
