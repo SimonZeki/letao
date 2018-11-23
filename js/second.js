@@ -88,7 +88,7 @@ $(function () {
          var result = data.result; // 后台返回的结果
          // 获取图片地址, 赋值给 img 的 src
          var picUrl = result.picAddr;
-         $('#imgBox img').attr("src", picUrl);
+         $('.img_Box img').attr("src", picUrl);
 
          // 将图片地址赋值给隐藏域
          $('[name="brandLogo"]').val(picUrl);
