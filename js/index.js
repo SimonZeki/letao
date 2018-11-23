@@ -10,7 +10,7 @@ $(function () {
       tooltip: {},
       // 图例
       legend: {
-         data: ['人数','点击'],
+         data: ['人数', '点击'],
       },
       xAxis: {
          data: ["1月", "2月", "3月", "4月", "5月", "6月"]
@@ -40,10 +40,10 @@ $(function () {
          text: '热门品牌销售',
          subtext: '2018年11月',
          x: 'center',
-         textStyle:{
+         textStyle: {
             fontSize: 25,
          },
-         subtextStyle:{
+         subtextStyle: {
             fontSize: 18,
          }
       },

@@ -1,4 +1,24 @@
 $(function () {
+
+   // 进度条功能
+   // 进度条要在ajax 发送请求前显示，在ajax请求回来后立刻结束
+
+   //----------- ajax 全局事件 -----------
+   // NProgress .start();
+   // NProgress .done();
+
+   $(document).ajaxStart(function(){
+      NProgress .start();
+   })
+
+   $(document).ajaxStop(function(){
+
+      setTimeout(function(){
+         NProgress .done();
+      },300)
+
+   })
+
    //二级菜单切换
    $('.category').click(function () {
       $(this).next().stop().slideToggle();
